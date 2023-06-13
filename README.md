@@ -43,7 +43,8 @@ memory (it is a big memory hog!). Only afterwards it uses a generic
 ## References
 
 1. A. Kononovicius, B. Kaulakys. *1/f noise from the trapping-detrapping
-   process of individual charge carriers.* (under review)
+   process of individual charge carriers.* (under review).
+  [arXiv:2306.07009 [math.PR]](https://arxiv.org/abs/2306.07009).
 2. A. Kononovicius, B. Kaulakys. *1/f noise from the sequence of
    nonoverlapping rectangular pulses.* Physical Review E **107**: 034117
    (2023). [doi:
