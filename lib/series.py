@@ -45,10 +45,10 @@ def __get_value(
     Input:
         t:
             Desired time moment.
+        pulse_starts:
+            List of pulse start times.
         pulse_durations:
             List of pulse durations.
-        gap_durations:
-            List of gap durations.
 
     Output:
         0 or 1 depending on if t falls within gap or pulse.
