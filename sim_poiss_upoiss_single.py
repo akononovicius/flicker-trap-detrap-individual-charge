@@ -97,7 +97,7 @@ def main(
     n_freq: int = 100,
     archive_dir: str = "data",
     seed: Optional[int] = None,
-):
+) -> None:
     """Simulate SNORPs with Poissonian pulses (fixed rate) and gaps (uniform rate).
 
     Input:
@@ -128,7 +128,7 @@ def main(
             Number of frequencies to consider within the given
             (or automatically selected) range. Includes end
             points.
-        archive_dir (default: "data")
+        archive_dir: (default: "data")
             Folder in which to save output files.
         seed: (default: None)
             RNG seed. If no value is passed, then it will be randomly

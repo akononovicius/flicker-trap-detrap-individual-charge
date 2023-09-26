@@ -141,7 +141,7 @@ def main(
     archive_dir: str = "data",
     signal_output: bool = False,
     seed: Optional[int] = None,
-):
+) -> None:
     """Simulate SNORPs with Poissonian pulses (fixed rate) and gaps (uniform rate).
 
     Input:
