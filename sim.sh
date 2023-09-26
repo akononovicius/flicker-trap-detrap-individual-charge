@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # results used in sample-psd figure
-python sim_poiss_upoiss_single.py --repeats 100 --duration 1e6 --min-detachment-rate 1e-4 --max-detachment-rate 1e2 --min-freq 1e-6 --max-freq 1e3 --seed 440
+python sim_poiss_upoiss_single.py --repeats 100 --duration 1e6 --min-detachment-rate 1e-4 --max-detachment-rate 1e4 --min-freq 1e-6 --max-freq 1e5 --seed 6288
 
 # results used in different-duration figure
 python sim_poiss_upoiss_single.py --duration 1e4 --min-detachment-rate 0 --max-detachment-rate 1e3 --min-freq 1e-4 --max-freq 1e4 --seed 18557
