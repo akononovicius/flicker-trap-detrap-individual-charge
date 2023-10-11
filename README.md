@@ -1,4 +1,4 @@
-# 1/f noise from the trapping-detrapping process of individual charge carriers
+# 1/f noise in electrical conductors arising from the heterogeneous detrapping process of individual charge carriers
 
 Typically it is assumed that trapping and detrapping in semiconductor
 materials are Poisson processes. When both processes are indeed Poisson then
@@ -42,10 +42,8 @@ memory (it is a big memory hog!). Only afterwards it uses a generic
 
 ## References
 
-1. A. Kononovicius, B. Kaulakys. *1/f noise from the trapping-detrapping
-   process of individual charge carriers.* (under review).
-  [arXiv:2306.07009 [math.PR]](https://arxiv.org/abs/2306.07009).
-2. A. Kononovicius, B. Kaulakys. *1/f noise from the sequence of
+1. A. Kononovicius, B. Kaulakys. [arXiv:2306.07009 [math.PR]](https://arxiv.org/abs/2306.07009).
+3. A. Kononovicius, B. Kaulakys. *1/f noise from the sequence of
    nonoverlapping rectangular pulses.* Physical Review E **107**: 034117
    (2023). [doi:
    10.1103/PhysRevE.107.034117](https://doi.org/10.1103/PhysRevE.107.034117).
