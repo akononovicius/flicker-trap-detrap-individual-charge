@@ -1,4 +1,4 @@
-# 1/f noise in electrical conductors arising from the heterogeneous detrapping process of individual charge carriers
+# 1/f noise in semiconductors arising from the heterogeneous detrapping process of individual charge carriers
 
 Typically it is assumed that trapping and detrapping in semiconductor
 materials are Poisson processes. When both processes are indeed Poisson then
