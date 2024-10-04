@@ -1,5 +1,6 @@
 from collections import Counter
 
+import matplotlib.gridspec as gridspec  # type: ignore
 import matplotlib.pyplot as plt  # type: ignore
 import numpy as np
 from matplotlib.backends.backend_pdf import PdfPages  # type: ignore
@@ -47,32 +48,32 @@ plot_signal_vals = int(1e3)  # how many signal values to plot
 skip_signal_vals = int(1e2)  # plot each x-th value
 
 with PdfPages("figs/multicarrier.pdf") as pdfFile:
-    fig = plt.figure(figsize=(9, 2))
+    fig = plt.figure(figsize=(4.8, 3.2))
+    grid = gridspec.GridSpec(2, 2, figure=fig, height_ratios=[0.75, 1])
+    ax1 = fig.add_subplot(grid[0, :])
+    ax2 = fig.add_subplot(grid[1, 0])
+    ax3 = fig.add_subplot(grid[1, 1])
 
-    plt.subplot(131)
-    ax = plt.gca()
-    ax.set_ylim([973, 996])
+    ax1.set_ylim([973, 996])
     try:  # try to read gzip file, fallback to raw file; data is reused in 132
         data = np.loadtxt(files[0], delimiter=",")
     except FileNotFoundError:
         data = np.loadtxt(files[1], delimiter=",")
     T = np.arange(0, plot_signal_vals) * (dt * skip_signal_vals)
-    plt.ylabel(r"$I(t) / a$")
-    plt.xlabel(r"$t$")
-    plt.plot(T, data[: (plot_signal_vals * skip_signal_vals) : skip_signal_vals])
-    plt.text(
+    ax1.set_ylabel(r"$I(t) / a$")
+    ax1.set_xlabel(r"$t$")
+    ax1.plot(T, data[: (plot_signal_vals * skip_signal_vals) : skip_signal_vals])
+    ax1.text(
         0.95,
         0.9,
         "(a)",
         horizontalalignment="right",
         verticalalignment="center",
-        transform=ax.transAxes,
+        transform=ax1.transAxes,
     )
 
-    plt.subplot(132)
-    ax = plt.gca()
-    plt.xlabel(r"$I / a$")
-    plt.ylabel(r"$p(I / a)$")
+    ax2.set_xlabel(r"$I / a$")
+    ax2.set_ylabel(r"$p(I / a)$")
     # data is read in 131
     pmf = __get_pmf(data)
     prob = __get_free_prob(
@@ -80,35 +81,37 @@ with PdfPages("figs/multicarrier.pdf") as pdfFile:
     )
     theory_x = np.arange(np.min(data), np.max(data) + 1)
     theory_y = binom.pmf(theory_x, n_carriers, prob)
-    plt.plot(pmf[:, 0], pmf[:, 1], "o")
-    plt.plot(theory_x, theory_y, "k--")
-    plt.text(
+    ax2.plot(pmf[:, 0], pmf[:, 1], "o")
+    ax2.plot(theory_x, theory_y, "k--")
+    ax2.text(
         0.95,
         0.9,
         "(b)",
         horizontalalignment="right",
         verticalalignment="center",
-        transform=ax.transAxes,
+        transform=ax2.transAxes,
     )
     del data, pmf, theory_x, theory_y
 
-    plt.subplot(133)
-    ax = plt.gca()
-    plt.loglog()
-    plt.xlabel(r"$f$")
-    plt.ylabel(r"$S_N(f)$")
+    ax3.loglog()
+    ax3.set_xlabel(r"$f$")
+    ax3.set_xticks([1e-3, 1e-1, 1e1, 1e3])
+    ax3.set_ylabel(r"$S_N(f)$")
+    ax3.set_yticks([1e-5, 1e-3, 1e-1, 1e1, 1e3])
     data = 10 ** np.loadtxt(files[2], delimiter=",")
-    plt.plot(data[:, 0], data[:, 1])
-    plt.plot(data[:, 0], data[:, 2], "k--")
-    plt.text(
+    ax3.plot(data[:, 0], data[:, 1])
+    ax3.plot(data[:, 0], data[:, 2], "k--")
+    ax3.text(
         0.95,
         0.9,
         "(c)",
         horizontalalignment="right",
         verticalalignment="center",
-        transform=ax.transAxes,
+        transform=ax3.transAxes,
     )
     del data
+
+    plt.tight_layout()
 
     pdfFile.savefig(fig)
     plt.close()
