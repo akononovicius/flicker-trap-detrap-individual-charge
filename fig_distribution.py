@@ -27,7 +27,7 @@ show_n_rates = 10  # N individual rates to show
 individual_rates = np.logspace(np.log10(rate_min), np.log10(rate_max), num=show_n_rates)
 
 with PdfPages("figs/distribution.pdf") as pdfFile:
-    fig = plt.figure(figsize=(3, 2))
+    fig = plt.figure(figsize=(2.4, 1.6))
     plt.loglog()
 
     ax = plt.gca()

@@ -9,7 +9,7 @@ files = [
 ]
 
 with PdfPages("figs/different-duration.pdf") as pdfFile:
-    fig = plt.figure(figsize=(3, 2))
+    fig = plt.figure(figsize=(2.4, 1.6))
     plt.loglog()
 
     ax = plt.gca()

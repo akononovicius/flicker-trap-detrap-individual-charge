@@ -8,7 +8,7 @@ colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
 series = convert_to_series(0, 4.45, 0.01, [1, 1.5, 1], [0.005, 1, 0.75])
 
 with PdfPages("figs/explanation.pdf") as pdfFile:
-    fig = plt.figure(figsize=(3, 2))
+    fig = plt.figure(figsize=(2.4, 1.6))
 
     ax = plt.gca()
     ax.grid(visible=False)

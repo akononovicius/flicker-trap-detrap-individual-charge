@@ -9,7 +9,7 @@ files = [
 colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
 
 with PdfPages("figs/sample-psd.pdf") as pdfFile:
-    fig = plt.figure(figsize=(3, 2))
+    fig = plt.figure(figsize=(2.4, 1.6))
     plt.loglog()
 
     ax = plt.gca()
