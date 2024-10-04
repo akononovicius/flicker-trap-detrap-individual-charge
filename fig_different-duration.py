@@ -17,7 +17,7 @@ with PdfPages("figs/different-duration.pdf") as pdfFile:
     ax.set_ylabel(r"$S_1(f)$")
     ax.set_ylim([1e-11, 3e3])
     ax.set_yticks([1e-10, 1e-6, 1e-2, 1e2])
-    ax.set_xticks([1e-7, 1e-5, 1e-3, 1e-1, 1e1, 1e3])
+    ax.set_xticks([1e-7, 1e-4, 1e-1, 1e2])
 
     for fN in files:
         data = 10 ** np.loadtxt(fN, delimiter=",")
