@@ -42,7 +42,11 @@ memory (it is a big memory hog!). Only afterwards it uses a generic
 
 ## References
 
-1. A. Kononovicius, B. Kaulakys. [arXiv:2306.07009 [math.PR]](https://arxiv.org/abs/2306.07009).
+1. A. Kononovicius, B. Kaulakys. *1/f noise in semiconductors arising from
+   the heterogeneous detrapping process of individual charge carriers*.
+   Journal of Statistical Mechanics **2024**: 113201 (2024). [doi:
+   10.1088/1742-5468/ad890b](https://doi.org/10.1088/1742-5468/ad890b).
+   [arXiv:2306.07009 [math.PR]](https://arxiv.org/abs/2306.07009).
 3. A. Kononovicius, B. Kaulakys. *1/f noise from the sequence of
    nonoverlapping rectangular pulses.* Physical Review E **107**: 034117
    (2023). [doi:
